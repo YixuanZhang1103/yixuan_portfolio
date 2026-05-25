@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html class="h-full overflow-hidden" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Yixuan Zhang - CV</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Dancing+Script&family=Nothing+You+Could+Do&family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Fraunces:opsz,wght,SOFT@9..144,500,50&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/dancing-font" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: "#fbf9f6",
+            surface: "#fbf9f6",
+            "surface-dim": "#dcdad7",
+            "surface-bright": "#fbf9f6",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f3f0",
+            "surface-container": "#f0edea",
+            "surface-container-high": "#eae8e5",
+            "surface-container-highest": "#e4e2df",
+            "on-surface": "#1b1c1a",
+            "on-surface-variant": "#444841",
+            "inverse-surface": "#30302f",
+            "inverse-on-surface": "#f3f0ed",
+            outline: "#757871",
+            "outline-variant": "#c5c8bf",
+            "surface-tint": "#566250",
+            primary: "#566250",
+            "on-primary": "#ffffff",
+            "primary-container": "#97a490",
+            "on-primary-container": "#2f3a2b",
+            "inverse-primary": "#bdcbb5",
+            secondary: "#5a6055",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#dfe5d6",
+            "on-secondary-container": "#60665b",
+            tertiary: "#6e5961",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#b39aa3",
+            "on-tertiary-container": "#443239",
+            background: "#fbf9f6",
+            "on-background": "#1b1c1a"
+          },
+          spacing: {
+            base: "8px",
+            gutter: "24px",
+            "container-max": "1100px",
+            "section-gap-desktop": "120px",
+            "section-gap-mobile": "64px"
+          },
+          fontFamily: {
+            display: ["Hanken Grotesk"],
+            body: ["Hanken Grotesk"],
+            label: ["JetBrains Mono"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      vertical-align: middle;
+    }
+    .view-section {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(86, 98, 80, 0.55) transparent;
+    }
+    .view-section.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      z-index: 10;
+    }
+    .nav-link.active {
+      color: #566250;
+      font-weight: 600;
+    }
+    .nav-link.active::after {
+      content: "";
+      display: block;
+      margin-top: 6px;
+      width: 100%;
+      height: 1px;
+      background: rgba(86, 98, 80, 0.28);
+    }
+    .section-rule::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, transparent, rgba(86, 98, 80, 0.18), transparent);
+    }
+    .wordmark {
+      font-family: "Nothing You Could Do", cursive;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 0.85;
+      letter-spacing: 0;
+      color: #566250;
+      text-rendering: geometricPrecision;
+      display: flex;
+      align-items: baseline;
+    }
+    .wordmark-first {
+      display: inline-block;
+      transform: translateY(0.02em);
+    }
+    .wordmark-last {
+      display: inline-block;
+      margin-left: 0.18em;
+      color: #566250;
+      transform: scale(1.03);
+    }
+    .wordmark:hover {
+      opacity: 0.9;
+    }
+    .soft-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(90, 96, 85, 0.08);
+      backdrop-filter: blur(8px);
+    }
+    .soft-interactive {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .soft-interactive:hover {
+      background: rgba(240, 237, 234, 0.92);
+      border-color: rgba(86, 98, 80, 0.18);
+    }
+    .timeline-node::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(90, 96, 85, 0.24);
+    }
+    .reveal-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      overflow: hidden;
+      transition: grid-template-rows 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
+    }
+    .reveal-content.is-open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      margin-top: 1.25rem;
+    }
+    .education-card-expanded {
+      background: rgba(240, 237, 234, 0.92);
+      border-color: rgba(86, 98, 80, 0.18);
+    }
+    .skill-chip {
+      background: rgba(110, 89, 97, 0.12);
+      color: #554149;
+    }
+    .ghost-button {
+      background: transparent;
+      color: #566250;
+      border: 1px solid rgba(86, 98, 80, 0.18);
+    }
+    .ghost-button:hover {
+      background: rgba(217, 231, 208, 0.3);
+    }
+    .hero-wash {
+      background:
+        radial-gradient(circle at 85% 12%, rgba(151, 164, 144, 0.22), transparent 32%),
+        radial-gradient(circle at 10% 90%, rgba(179, 154, 163, 0.12), transparent 26%);
+    }
+    .intro-copy {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+      font-weight: 600;
+      font-style: normal;
+      line-height: 1.65;
+      letter-spacing: 0em;
+      color: #1b1c1a;
+      max-width: 44rem;
+    }
+    .intro-keyword {
+      display: inline;
+      background: none;
+      border: none;
+      border-bottom: 1.5px solid currentColor;
+      padding: 0 1px;
+      cursor: pointer;
+      transition: opacity 0.18s ease;
+      font: inherit;
+      font-style: italic;
+    }
+    .intro-keyword:hover {
+      opacity: 0.72;
+    }
+    .intro-keyword:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    .intro-keyword[data-color="teal"] { color: #4f7f72; }
+    .intro-keyword[data-color="blue"] { color: #5876a6; }
+    .intro-keyword[data-color="amber"] { color: #a6782f; }
+    .intro-keyword[data-color="purple"] { color: #75679b; }
+    .intro-keyword[data-color="rose"] { color: #966177; }
+    .intro-hint {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(68, 72, 65, 0.7);
+    }
+    .intro-placeholder-card {
+      min-height: 22rem;
+      border-radius: 24px;
+      border: 1px solid rgba(90, 96, 85, 0.08);
+      background:
+        radial-gradient(circle at top left, rgba(217, 231, 208, 0.24), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(232, 228, 241, 0.18), transparent 28%),
+        rgba(255, 255, 255, 0.54);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .intro-placeholder-title {
+      margin-top: 1.25rem;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.5rem, 2vw, 1.9rem);
+      line-height: 1.45;
+      color: #2f3a2b;
+      max-width: 20rem;
+    }
+    .intro-placeholder-note {
+      margin-top: 1rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: rgba(68, 72, 65, 0.82);
+      max-width: 22rem;
+    }
+    .intro-placeholder-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: rgba(86, 98, 80, 0.08);
+      color: #566250;
+      border: 1px solid rgba(86, 98, 80, 0.08);
+    }
+    .intro-panel {
+      display: none;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      animation: panelFadeIn 0.18s ease-out both;
+    }
+    .intro-panel.visible {
+      display: block;
+    }
+    @keyframes panelFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .intro-panel-inner {
+      border-radius: 24px;
+      padding: 1.6rem 1.6rem 1.75rem;
+      border: 1px solid rgba(90, 96, 85, 0.05);
+      min-height: 22rem;
+      backdrop-filter: blur(4px);
+      transform-origin: center center;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      will-change: transform, opacity;
+      animation: cardRotateIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes cardRotateIn {
+      from {
+        opacity: 0;
+        transform: rotateY(-88deg) translateZ(0);
+      }
+      58% {
+        opacity: 1;
+        transform: rotateY(10deg) translateZ(0);
+      }
+      to {
+        opacity: 1;
+        transform: rotateY(0deg) translateZ(0);
+      }
+    }
+    .intro-panel[data-color="teal"] .intro-panel-inner { background: rgba(218, 236, 228, 0.68); }
+    .intro-panel[data-color="blue"] .intro-panel-inner { background: rgba(226, 234, 245, 0.68); }
+    .intro-panel[data-color="amber"] .intro-panel-inner { background: rgba(245, 235, 214, 0.66); }
+    .intro-panel[data-color="purple"] .intro-panel-inner { background: rgba(232, 228, 241, 0.66); }
+    .intro-panel[data-color="rose"] .intro-panel-inner { background: rgba(244, 228, 234, 0.66); }
+    .intro-panel-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .intro-panel[data-color="teal"] .intro-panel-label { color: #3f6f62; }
+    .intro-panel[data-color="blue"] .intro-panel-label { color: #4f6590; }
+    .intro-panel[data-color="amber"] .intro-panel-label { color: #8b6530; }
+    .intro-panel[data-color="purple"] .intro-panel-label { color: #68598d; }
+    .intro-panel[data-color="rose"] .intro-panel-label { color: #86546a; }
+    .intro-panel-body {
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: #1b1c1a;
+    }
+    .intro-divider {
+      height: 1px;
+      background: rgba(90, 96, 85, 0.12);
+      margin: 1.1rem 0 1rem;
+    }
+    .intro-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .intro-tag {
+      padding: 0.38rem 0.72rem;
+      border-radius: 9999px;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+    }
+    .intro-panel[data-color="teal"] .intro-tag { background: rgba(79, 127, 114, 0.12); color: #3f6f62; }
+    .intro-panel[data-color="blue"] .intro-tag { background: rgba(88, 118, 166, 0.12); color: #4f6590; }
+    .intro-panel[data-color="amber"] .intro-tag { background: rgba(166, 120, 47, 0.12); color: #8b6530; }
+    .intro-panel[data-color="purple"] .intro-tag { background: rgba(117, 103, 155, 0.12); color: #68598d; }
+    .intro-panel[data-color="rose"] .intro-tag { background: rgba(150, 97, 119, 0.12); color: #86546a; }
+    .education-accent-box {
+      background: #f6f3f0;
+      border: 1px solid rgba(86, 98, 80, 0.05);
+    }
+    .education-skill-chip {
+      background: rgba(110, 89, 97, 0.12);
+      color: #554149;
+    }
+    .rtw-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #C2A8B1;
+      background: rgba(194,168,177,0.08);
+      cursor: pointer;
+      font-size: 14px;
+      color: #7d5d67;
+      transition: background 0.15s, border-color 0.15s;
+      user-select: none;
+    }
+    .rtw-chip:hover { background: rgba(194,168,177,0.16); }
+    .rtw-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #C2A8B1; flex-shrink: 0;
+    }
+    .rtw-chevron {
+      transition: transform 0.22s ease;
+      font-size: 14px;
+      color: #C2A8B1;
+    }
+    .rtw-chevron.open { transform: rotate(180deg); }
+    .rtw-panel {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.28s cubic-bezier(0.16,1,0.3,1), opacity 0.22s ease;
+      opacity: 0;
+      width: 100%;
+    }
+    .rtw-panel.open { max-height: 280px; opacity: 1; }
+    .rtw-inner {
+      margin-top: 0;
+      background: rgba(194,168,177,0.06);
+      border: 1px solid #C2A8B1;
+      border-radius: 24px;
+      padding: 1.5rem 1.6rem;
+    }
+    .rtw-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 5px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(194,168,177,0.2);
+    }
+    .rtw-row:last-child { border-bottom: none; }
+    .rtw-label { color: #a07e88; }
+    .rtw-value { font-weight: 500; color: #5a3d45; }
+    .rtw-badge {
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: rgba(194,168,177,0.18);
+      color: #7d5d67;
+      font-weight: 500;
+    }
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .experience-copy li {
+      position: relative;
+      padding-left: 1.1rem;
+      line-height: 1.75;
+      color: #444841;
+      font-size: 0.925rem;
+    }
+    .experience-copy li + li {
+      margin-top: 0.55rem;
+    }
+    .experience-copy li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #566250;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="h-full bg-background text-on-background font-body overflow-hidden flex flex-col">
+  <header class="flex-none bg-background/80 backdrop-blur-md border-b border-primary/5">
+    <nav class="max-w-container-max mx-auto px-gutter h-20 flex items-center justify-between">
+      <button class="wordmark transition-opacity" onclick="switchView('home')" aria-label="Yixuan Zhang home">
+        <span class="wordmark-first">Yixuan</span>
+        <span class="wordmark-last">Zhang</span>
+      </button>
+      <div class="hidden md:flex items-center gap-8">
+        <button class="nav-link text-lg text-on-surface-variant hover:text-primary transition-colors active" data-view="home" onclick="switchView('home')">About</button>
+        <button class="nav-link text-lg text-on-surface-variant hover:text-primary transition-colors" data-view="education" onclick="switchView('education')">Education</button>
+        <button class="nav-link text-lg text-on-surface-variant hover:text-primary transition-colors" data-view="experience" onclick="switchView('experience')">Experience</button>
+        <button class="px-6 py-2 bg-primary text-on-primary rounded-lg hover:opacity-90 transition-opacity" onclick="switchView('contact')">Contact</button>
+      </div>
+      <button class="md:hidden text-primary" onclick="switchView('contact')">
+        <span class="material-symbols-outlined">mail</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="flex-1 relative overflow-hidden">
+    <section class="view-section active py-12 md:py-24" id="view-home">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="hero-wash rounded-[32px] p-6 md:p-10" style="position: relative;">
+          <div class="grid md:grid-cols-[1.25fr_0.75fr] gap-10 md:gap-16 items-start">
+            <div class="space-y-8 pt-1">
+              <div class="intro-copy">
+                I brainstorm
+                <button class="intro-keyword" data-color="teal" data-panel="strategy" aria-expanded="false">creative strategies</button>
+                from user insight. I craft
+                <button class="intro-keyword" data-color="blue" data-panel="content" aria-expanded="false">content</button>
+                by pinpointing what people
+                <button class="intro-keyword" data-color="amber" data-panel="need" aria-expanded="false">actually need</button>.
+                I bridge
+                <button class="intro-keyword" data-color="purple" data-panel="storytelling" aria-expanded="false">storytelling</button>
+                with
+                <button class="intro-keyword" data-color="rose" data-panel="data" aria-expanded="false">data</button>
+                because good content is never just a feeling.
+              </div>
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div class="soft-card rounded-xl p-4">
+                  <p class="font-label text-[11px] uppercase tracking-[0.24em] text-secondary">Based In</p>
+                  <div class="flex items-start gap-2 mt-3 text-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    <span>London, United Kingdom E2 8HJ</span>
+                  </div>
+                </div>
+                <div class="soft-card rounded-xl p-4">
+                  <p class="font-label text-[11px] uppercase tracking-[0.24em] text-secondary">Phone</p>
+                  <div class="flex items-start gap-2 mt-3 text-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px]">call</span>
+                    <span>+44 07962 925455</span>
+                  </div>
+                </div>
+                <div class="soft-card rounded-xl p-4">
+                  <p class="font-label text-[11px] uppercase tracking-[0.24em] text-secondary">Email</p>
+                  <div class="flex items-start gap-2 mt-3 text-sm text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px]">mail</span>
+                    <span class="break-all">yixuanzhang1103@outlook.com</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3 items-start">
+                <button class="px-6 py-3 bg-primary text-on-primary rounded-lg hover:opacity-90 transition-opacity" onclick="switchView('experience')">View Experience</button>
+                <button class="ghost-button px-6 py-3 rounded-lg transition-colors" onclick="switchView('education')">See Education</button>
+                <div style="display: inline-block;">
+                  <div class="rtw-chip" id="rtw-chip" onclick="toggleRtw()" role="button" aria-expanded="false">
+                    <span class="rtw-dot"></span>
+                    Right to work in the UK
+                    <i class="ti ti-chevron-down rtw-chevron" id="rtw-chevron" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="space-y-4" style="display: flex; flex-direction: column;">
+              <div class="intro-placeholder-card" id="intro-placeholder">
+                <div class="intro-placeholder-icon">
+                  <span class="material-symbols-outlined">touch_app</span>
+                </div>
+                <p class="intro-placeholder-title">Tap a key word to explore more...</p>
+              </div>
+
+              <div class="intro-panel" data-color="teal" id="intro-panel-strategy">
+                <div class="intro-panel-inner">
+                  <p class="intro-panel-label">Creative Strategies</p>
+                  <p class="intro-panel-body">
+                    Strategy is rooted in brand mission and starts with a clear goal. From there it's about asking the right questions: who is the right person to carry this message, what format will make it land, and through which channels does it actually reach people?
+                  </p>
+                  <div class="intro-divider"></div>
+                  <div class="intro-tags">
+                    <span class="intro-tag">Campaign ideation</span>
+                    <span class="intro-tag">Multi-channel recall strategy</span>
+                    <span class="intro-tag">Keyword promotion</span>
+                    <span class="intro-tag">Account positioning</span>
+                    <span class="intro-tag">Festival &amp; moment leverage</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="intro-panel" data-color="blue" id="intro-panel-content">
+                <div class="intro-panel-inner">
+                  <p class="intro-panel-label">Content</p>
+                  <p class="intro-panel-body">
+                    Good content is not only relevant. It is timed, shaped, and told with context in mind. I write scripts, direct shoots, edit videos, and adapt ideas so they feel specific to the people they are meant for.
+                  </p>
+                  <div class="intro-divider"></div>
+                  <div class="intro-tags">
+                    <span class="intro-tag">Script writing</span>
+                    <span class="intro-tag">Video planning</span>
+                    <span class="intro-tag">Trend-led content</span>
+                    <span class="intro-tag">Adobe Premiere Pro</span>
+                    <span class="intro-tag">Localisation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="intro-panel" data-color="amber" id="intro-panel-need">
+                <div class="intro-panel-inner">
+                  <p class="intro-panel-label">Actually Need</p>
+                  <p class="intro-panel-body">
+                    User need isn't only what people say but also what they search for, what they click, and what makes them stay. Opportunities lie in search behaviour, interaction patterns, and user profiles, which together reveal the gap between what exists and what people are actually looking for.
+                  </p>
+                  <div class="intro-divider"></div>
+                  <div class="intro-tags">
+                    <span class="intro-tag">User profiling</span>
+                    <span class="intro-tag">Search behaviour analysis</span>
+                    <span class="intro-tag">Consumer insight</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="intro-panel" data-color="purple" id="intro-panel-storytelling">
+                <div class="intro-panel-inner">
+                  <p class="intro-panel-label">Storytelling</p>
+                  <p class="intro-panel-body">
+                    In an increasingly crowded market, a well-told story is what makes a brand visible. What is the mission? What makes it different? A clear brand positioning and narrative is the foundation everything else is built on.
+                  </p>
+                  <div class="intro-divider"></div>
+                  <div class="intro-tags">
+                    <span class="intro-tag">Brand narrative</span>
+                    <span class="intro-tag">Brand positioning</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="intro-panel" data-color="rose" id="intro-panel-data">
+                <div class="intro-panel-inner">
+                  <p class="intro-panel-label">Data</p>
+                  <p class="intro-panel-body">
+                    Data doesn't speak for itself, but it's crucial in shaping decisions and providing honest feedback. Someone who can interpret and utilise it turns numbers into value.
+                  </p>
+                  <div class="intro-divider"></div>
+                  <div class="intro-tags">
+                    <span class="intro-tag">Python</span>
+                    <span class="intro-tag">SQL</span>
+                    <span class="intro-tag">NLP</span>
+                    <span class="intro-tag">Data visualisation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding-top: 0.5rem;">
+                <div class="rtw-panel" id="rtw-panel" aria-hidden="true">
+                  <div class="rtw-inner">
+                    <div class="rtw-row">
+                      <span class="rtw-label">Status</span>
+                      <span class="rtw-badge">Eligible to work</span>
+                    </div>
+                    <div class="rtw-row">
+                      <span class="rtw-label">Visa type</span>
+                      <span class="rtw-value">Student Visa</span>
+                    </div>
+                    <div class="rtw-row">
+                      <span class="rtw-label">Valid until</span>
+                      <span class="rtw-value">21st Jan 2027</span>
+                    </div>
+                    <div class="rtw-row">
+                      <span class="rtw-label">Sponsorship required</span>
+                      <span class="rtw-value">Yes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view-section py-12 md:py-24 bg-surface-container-low" id="view-experience">
+      <div class="max-w-container-max mx-auto px-gutter section-rule">
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-[30%]">
+            <h2 class="font-display text-4xl md:text-5xl text-primary">Experience</h2>
+            <div class="mt-6 soft-card rounded-2xl p-5 space-y-4">
+              <p class="font-label text-[10px] uppercase tracking-[0.18em] text-secondary">Beyond the Professional</p>
+              <ul class="space-y-3">
+                <li class="text-sm text-on-surface-variant leading-6">
+                  <p class="font-semibold text-base text-primary before:content-['·'] before:mr-2 before:text-primary">Animal Shelter Volunteer</p>
+                  <p class="pl-4">Assisted at adoption events — introducing animals to prospective owners and supporting the rehoming process.</p>
+                </li>
+                <li class="text-sm text-on-surface-variant leading-6">
+                  <p class="font-semibold text-base text-primary before:content-['·'] before:mr-2 before:text-primary">FoodCycle Volunteer</p>
+                  <p class="pl-4">Turns surplus food into community meals to tackle food poverty, food waste and loneliness, UK.</p>
+                </li>
+                <li class="text-sm text-on-surface-variant leading-6">
+                  <p class="font-semibold text-base text-primary before:content-['·'] before:mr-2 before:text-primary">Online Teaching Volunteer</p>
+                  <p class="pl-4">Taught children in remote areas of China via online classes.</p>
+                </li>
+                <li class="text-sm text-on-surface-variant leading-6">
+                  <p class="font-semibold text-base text-primary before:content-['·'] before:mr-2 before:text-primary">The International Art Consultancy Challenge 2025</p>
+                  <p class="pl-4">Special Commendation — hosted by UCL, United Kingdom.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:w-[70%] space-y-4">
+            <div class="experience-item relative pl-10 py-8 pr-8 timeline-node soft-card soft-interactive rounded-r-xl cursor-pointer" onclick="event.stopPropagation(); toggleDisclosure(this)">
+              <div class="absolute -left-[5px] top-7 h-[10px] w-[10px] rounded-full bg-primary"></div>
+              <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
+                <div class="md:w-[180px] md:pt-1">
+                  <p class="font-label text-xs text-secondary uppercase tracking-[0.18em]">May 2024 - Sep 2024</p>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 class="text-2xl font-medium text-on-surface">Trending Event Operation</h3>
+                      <p class="mt-1 text-primary font-medium">Kuaishou Technology, Beijing, China</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-primary/60">
+                      <span class="hint-text font-label text-[10px] uppercase tracking-wider">View Details</span>
+                      <span class="material-symbols-outlined text-[18px] reveal-icon">keyboard_arrow_down</span>
+                    </div>
+                  </div>
+                  <div class="reveal-content">
+                    <ul class="experience-copy overflow-hidden">
+                      <li>Analysed search terms and user sentiment around the college application season; worked with Xuefeng Zhang's team to shape <strong>11 live stream themes</strong> addressing student and parent concerns.</li>
+                      <li>Planned and executed entrance exam season activities, managing live stream content and promotional materials — delivering <strong>200M+ views</strong>, <strong>30+ social media trend appearances</strong>, and a reach of <strong>28M+ students and parents</strong>.</li>
+                      <li>Coordinated with the growth team on targeted push notifications for exam reporting, attracting <strong>27,000+ new and returning users</strong>.</li>
+                      <li>Reviewed competitor campaigns to identify strengths, weaknesses and opportunities for future strategy improvements.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item relative pl-10 py-8 pr-8 timeline-node soft-card soft-interactive rounded-r-xl cursor-pointer" onclick="event.stopPropagation(); toggleDisclosure(this)">
+              <div class="absolute -left-[5px] top-7 h-[10px] w-[10px] rounded-full bg-outline-variant"></div>
+              <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
+                <div class="md:w-[180px] md:pt-1">
+                  <p class="font-label text-xs text-secondary uppercase tracking-[0.18em]">Jan 2024 - Apr 2024</p>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 class="text-2xl font-medium text-on-surface">Overseas Content Operation (Video Direction)</h3>
+                      <p class="mt-1 text-primary font-medium">NewsBreak, Shanghai, China</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-primary/60">
+                      <span class="hint-text font-label text-[10px] uppercase tracking-wider">View Details</span>
+                      <span class="material-symbols-outlined text-[18px] reveal-icon">keyboard_arrow_down</span>
+                    </div>
+                  </div>
+                  <div class="reveal-content">
+                    <ul class="experience-copy overflow-hidden">
+                      <li>Built and operated localised NewsBreak accounts from scratch for US audiences, developing <strong>5 trending media IPs</strong> and gaining <strong>40,000+ new followers</strong> with average daily viewership of <strong>10,000</strong>.</li>
+                      <li>Produced audience-specific content around local culture, including a St. Patrick's Day video series for the Chicago account that grew followers by <strong>1,000+ within a week</strong>.</li>
+                      <li>Wrote scripts, gathered materials, and produced short-form videos using code automation and Adobe Premiere Pro — strongest video reached <strong>443,000 views</strong> and <strong>8,000+ likes</strong>.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item relative pl-10 py-8 pr-8 timeline-node soft-card soft-interactive rounded-r-xl cursor-pointer" onclick="event.stopPropagation(); toggleDisclosure(this)">
+              <div class="absolute -left-[5px] top-7 h-[10px] w-[10px] rounded-full bg-outline-variant"></div>
+              <div class="flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
+                <div class="md:w-[180px] md:pt-1">
+                  <p class="font-label text-xs text-secondary uppercase tracking-[0.18em]">Jun 2022 - Jun 2023</p>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 class="text-2xl font-medium text-on-surface">Student Leader of Video Department</h3>
+                      <p class="mt-1 text-primary font-medium">Northeastern University Television Station, Shenyang, China</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-primary/60">
+                      <span class="hint-text font-label text-[10px] uppercase tracking-wider">View Details</span>
+                      <span class="material-symbols-outlined text-[18px] reveal-icon">keyboard_arrow_down</span>
+                    </div>
+                  </div>
+                  <div class="reveal-content">
+                    <ul class="experience-copy overflow-hidden">
+                      <li>Managed and created content for the university's official media platforms, covering editing, script writing, content selection and publishing; used data analysis to improve quality and operational strategy.</li>
+                      <li>Led a graduation season collaboration event across Bilibili — planning, filming, communication and promotion — helping collaborative videos surpass <strong>1 million views</strong>.</li>
+                      <li>Developed a new media communication plan, contributed original promotional ideas, and independently led the team to complete <strong>20+ video projects</strong>.</li>
+                      <li>Optimised content strategy through comparative analysis of peer university accounts.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view-section py-12 md:py-24 bg-surface-container-low" id="view-education">
+      <div class="max-w-container-max mx-auto px-gutter section-rule">
+        <div class="text-center mb-12">
+          <h2 class="font-display text-4xl md:text-5xl text-on-background">Education</h2>
+          <p class="mt-2 text-on-surface-variant">Bridging humanities subjects with quantitative insight.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="education-item self-start soft-card soft-interactive rounded-2xl p-8 cursor-pointer" id="msc-card" onclick="event.stopPropagation(); toggleMscCard()">
+            <div class="flex justify-between items-start gap-6">
+              <div>
+                <span class="font-label text-xs text-secondary uppercase tracking-widest">Sep 2025 - Present</span>
+                <h3 class="text-2xl mt-2 font-medium text-primary">MSc Digital Humanities</h3>
+                <p class="text-on-surface-variant">University College London, London, England</p>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span class="hint-text font-label text-[10px] text-primary/40 uppercase tracking-wider" id="msc-hint">View Details</span>
+                <span class="material-symbols-outlined text-primary/40 reveal-icon" id="msc-icon">expand_more</span>
+              </div>
+            </div>
+            <div class="reveal-content" id="msc-content">
+              <div class="overflow-hidden border-t border-primary/5 pt-6">
+                <p class="font-label text-xs text-primary mb-4">Key Modules</p>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Introduction to Programming and Scripting</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Introduction to Digitisation</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Natural Language Processing and Text Analysis</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Data Visualization and GIS</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Social Media Platform and Powers</li>
+                </ul>
+                <div class="education-accent-box mt-6 rounded-xl p-4">
+                  <p class="font-label text-xs text-secondary uppercase tracking-[0.18em] mb-3">Technical Toolkit</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">R</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">Python</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">JavaScript</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">2D Digitisation</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">3D Digitisation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-item self-start soft-card soft-interactive rounded-2xl p-8 cursor-pointer" id="ba-card" onclick="event.stopPropagation(); toggleBaCard()">
+            <div class="flex justify-between items-start gap-6">
+              <div>
+                <span class="font-label text-xs text-secondary uppercase tracking-widest">Sep 2021 - Jun 2025</span>
+                <h3 class="text-2xl mt-2 font-medium text-primary">BA English</h3>
+                <p class="text-on-surface-variant">Northeastern University, Shenyang, China</p>
+                <p class="mt-2 text-sm text-on-surface-variant">GPA: 4.0 / 5.0</p>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span class="hint-text font-label text-[10px] text-primary/40 uppercase tracking-wider" id="ba-hint">View Details</span>
+                <span class="material-symbols-outlined text-primary/40 reveal-icon" id="ba-icon">expand_more</span>
+              </div>
+            </div>
+            <div class="reveal-content" id="ba-content">
+              <div class="overflow-hidden border-t border-primary/5 pt-6">
+                <p class="font-label text-xs text-primary mb-4">Key Modules</p>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> International Business English</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Applied Linguistics</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Consecutive Interpreting</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Advanced Mathematics</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Python Programming</li>
+                  <li class="flex items-center gap-2"><span class="h-1 w-1 rounded-full bg-primary"></span> Editing and Special Effects of Premiere Pro</li>
+                </ul>
+                <div class="education-accent-box mt-6 rounded-xl p-4">
+                  <p class="font-label text-xs text-secondary uppercase tracking-[0.18em] mb-3">Practical Skills</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">Python</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">Adobe Premiere Pro</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">Adobe Photoshop</span>
+                    <span class="education-skill-chip px-3 py-2 text-xs rounded-full">Interpreting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view-section flex items-center justify-center p-gutter" id="view-contact">
+      <div class="max-w-3xl w-full mx-auto">
+        <div class="bg-primary text-on-primary py-10 md:py-14 rounded-[40px] px-gutter text-center space-y-6 relative overflow-hidden">
+          <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.4),transparent)]"></div>
+          </div>
+          <h2 class="relative z-10 leading-tight" style="font-family: 'Nothing You Could Do', cursive; font-size: clamp(2rem, 5vw, 3.2rem);">Always open to connect and explore what we might build together.</h2>
+          <div class="flex flex-col justify-center items-center gap-4 relative z-10">
+            <a class="px-10 py-4 bg-background text-primary text-lg rounded-full hover:opacity-90 transition-opacity flex items-center gap-3" href="mailto:yixuanzhang1103@outlook.com">
+              Email Yixuan <span class="material-symbols-outlined">north_east</span>
+            </a>
+            <p class="text-on-primary/80">London, United Kingdom • +44 07962 925455 • yixuanzhang1103@outlook.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="flex-none w-full border-t border-primary/5 bg-background">
+    <div class="max-w-container-max mx-auto px-gutter h-16 flex justify-between items-center gap-4">
+      <p class="font-label text-xs text-on-surface-variant/60">Yixuan Zhang - London, United Kingdom</p>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-[10px] uppercase tracking-wider" href="mailto:yixuanzhang1103@outlook.com">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleRtw() {
+      const panel = document.getElementById('rtw-panel');
+      const chevron = document.getElementById('rtw-chevron');
+      const chip = document.getElementById('rtw-chip');
+      const isOpen = panel.classList.contains('open');
+      panel.classList.toggle('open', !isOpen);
+      chevron.classList.toggle('open', !isOpen);
+      chip.setAttribute('aria-expanded', String(!isOpen));
+      panel.setAttribute('aria-hidden', String(isOpen));
+    }
+
+    function switchView(viewId) {
+      document.querySelectorAll(".view-section").forEach((section) => section.classList.remove("active"));
+      const target = document.getElementById(`view-${viewId}`);
+      if (target) {
+        target.classList.add("active");
+        target.scrollTop = 0;
+      }
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.classList.toggle("active", link.dataset.view === viewId);
+      });
+
+      document.querySelectorAll(".reveal-active").forEach((item) => {
+        item.classList.remove("reveal-active");
+        item.querySelector(".reveal-content")?.classList.remove("is-open");
+        const hint = item.querySelector(".hint-text");
+        const icon = item.querySelector(".reveal-icon");
+        if (hint) hint.textContent = "View Details";
+        if (icon) {
+          icon.textContent = item.classList.contains("education-item") ? "expand_more" : "keyboard_arrow_down";
+        }
+      });
+
+      history.pushState(null, "", `#${viewId}`);
+    }
+
+    function toggleDisclosure(element) {
+      const content = element.querySelector(".reveal-content");
+      if (!content) return;
+
+      const isActive = element.classList.toggle("reveal-active");
+      content.classList.toggle("is-open", isActive);
+      const hint = element.querySelector(".hint-text");
+      const icon = element.querySelector(".reveal-icon");
+      if (hint) hint.textContent = isActive ? "Show Less" : "View Details";
+      if (icon) {
+        icon.textContent = element.classList.contains("education-item")
+          ? (isActive ? "expand_less" : "expand_more")
+          : (isActive ? "keyboard_arrow_up" : "keyboard_arrow_down");
+      }
+    }
+
+    function toggleMscCard() {
+      const card = document.getElementById("msc-card");
+      const content = document.getElementById("msc-content");
+      const hint = document.getElementById("msc-hint");
+      const icon = document.getElementById("msc-icon");
+      if (!card || !content) return;
+
+      const isActive = content.classList.toggle("is-open");
+      card.classList.toggle("education-card-expanded", isActive);
+      if (hint) hint.textContent = isActive ? "Show Less" : "View Details";
+      if (icon) icon.textContent = isActive ? "expand_less" : "expand_more";
+    }
+
+    function toggleBaCard() {
+      const card = document.getElementById("ba-card");
+      const content = document.getElementById("ba-content");
+      const hint = document.getElementById("ba-hint");
+      const icon = document.getElementById("ba-icon");
+      if (!card || !content) return;
+
+      const isActive = content.classList.toggle("is-open");
+      card.classList.toggle("education-card-expanded", isActive);
+      if (hint) hint.textContent = isActive ? "Show Less" : "View Details";
+      if (icon) icon.textContent = isActive ? "expand_less" : "expand_more";
+    }
+
+    window.addEventListener("popstate", () => {
+      const view = window.location.hash.replace("#", "") || "home";
+      switchView(view);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const initialView = window.location.hash.replace("#", "") || "home";
+      switchView(initialView);
+
+      const introKeywords = document.querySelectorAll(".intro-keyword");
+      const introPlaceholder = document.getElementById("intro-placeholder");
+      let activeIntroPanel = null;
+
+      introKeywords.forEach((keyword) => {
+        keyword.addEventListener("click", () => {
+          const panelId = `intro-panel-${keyword.dataset.panel}`;
+          const panel = document.getElementById(panelId);
+          if (!panel) return;
+
+          if (activeIntroPanel === panelId) {
+            panel.classList.remove("visible");
+            keyword.setAttribute("aria-expanded", "false");
+            if (introPlaceholder) introPlaceholder.style.display = "";
+            activeIntroPanel = null;
+            return;
+          }
+
+          if (activeIntroPanel) {
+            document.getElementById(activeIntroPanel)?.classList.remove("visible");
+            const previousKey = document.querySelector(`.intro-keyword[data-panel="${activeIntroPanel.replace("intro-panel-", "")}"]`);
+            previousKey?.setAttribute("aria-expanded", "false");
+          }
+
+          panel.classList.add("visible");
+          keyword.setAttribute("aria-expanded", "true");
+          if (introPlaceholder) introPlaceholder.style.display = "none";
+          activeIntroPanel = panelId;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
