@@ -1,4 +1,4 @@
-# yixuan_portfolio
+# yixuan_cv_site
 
 My first attempt at building a personal website from scratch with AI.
 
@@ -10,7 +10,7 @@ A CV site which covers my work experience, education, and a bit about my ideas a
 
 This project is born in Google Stitch which was used to design the overall layout. Then Claude is introduced to fill the information and do some tweaks. For some small changes, I edited the HTML directly.
 
-Live site: `https://yourusername.github.io/cv`
+Live site: `https://yixuanzhang1103.github.io/yixuan_cv/`
 
 ---
 
